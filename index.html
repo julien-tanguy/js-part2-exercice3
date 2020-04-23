@@ -2,17 +2,30 @@
 <html lang="FR">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <title>Js - partie 2 - exercice 3</title>
     </head>
     <body>
         <script>
-            var number = parseInt(prompt('saisisez un nombre', 'le nombre de votre choix'));
-            if (number%2 == 0) {
-            alert('le nombre est pair');
-        } else {
-            alert('le nombre est impair');
-        }
+            var number = (prompt('saisisez un nombre', 'le nombre de votre choix'));
+            // Si ce n'est pas un nombre
+            if (isNaN(number) == true) {
+                alert('Veuillez renseigner un nombre');
+            } else {
+                var numberInt = parseInt(number);
+                // Verifie si le nombre saisi est un nombre entier.
+                if (number == numberInt) {
+                    // on recupere le reste de la division par deux grace au modulo (%)
+                    var rest = number % 2;
+                    if (rest == 0) {
+                        alert('c\'est un nombre pair')
+                    } else {
+                        alert('c\'est un nombre impair')
+                    }
+                } else {
+                    alert('Nous n\'acceptons pas les nombres a virgule')
+                }
+            }
         </script>
     </body>
 </html>
